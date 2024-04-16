@@ -1,0 +1,22 @@
+# Application properties. This is the default greeting
+app:
+  greeting: Hello
+  someClient:
+    baseUrl: http://someUrl
+counter: 0
+
+  # Microprofile server properties
+server:
+  port: 8080
+  host: 0.0.0.0
+
+io.helidon.examples.quickstart.mp.SomeClient/Retry/enabled: true
+io.helidon.examples.quickstart.mp.SomeClient/Timeout/enabled: true
+io.helidon.examples.quickstart.mp.SomeClient/Retry/maxRetries: 3
+io.helidon.examples.quickstart.mp.SomeClient/Timeout/value: 5000
+
+#Rest Client Properties for Some Client Service
+someClient/mp-rest/url: "${app.someClient.baseUrl}"
+someClient/mp-rest/connectTimeout: 5000
+someClient/mp-rest/responseTimeout: 5000
+someClient/mp-rest/propagateHeaders: Accept-Language
